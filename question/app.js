@@ -88,10 +88,10 @@ console.log(`${num1} を ${num2} で割った余りは ${result} です。`);
 //Q10
 // スコープ: 変数が使える場所のこと
 // 参照: 変数の中身を見ること
-function foo() {
-  let x = 1; // xはこの関数の中だけで使える
-}
-console.log(x); // エラー: xは見えない
+// function foo() {
+//   let x = 1; // xはこの関数の中だけで使える
+// }
+// console.log(x); // エラー: xは見えない
 
 // 理由はconsole.log(x);はfoo関数のスコープの中だけにあるので、外から参照できない
 // 正しいコード：
@@ -100,3 +100,48 @@ console.log(x); // エラー: xは見えない
 //   console.log(x); ＝　xはこの関数の中だけで使える
 // }
 // foo();　// 1と表示される
+
+
+//Q01
+console.log(Math.round(Math.random() * 9));
+
+//Q02
+setTimeout(() => console.log("Hello World!"), 3000);
+
+//Q03
+let num = 1;
+
+if (num > 0) {
+  console.log("numは0より大きいです");
+} else if (num < 0) {
+  console.log("numは0より小いです");
+} else {
+  console.log("0です");
+}
+
+//Q04
+let = numbers = [];
+for(let num = 1; num < 100; num++) {
+  numbers.push(num);
+}
+console.log(numbers);
+
+//Q05
+let mixed = [4, '2', 5, '8', '9', 0, 1];
+
+for (let num = 0; num < mixed.length; num++) {
+  let mixedNum = mixed[num];
+
+//   if (typeof mixedNum === "number") {
+  if (mixedNum === 0 || mixedNum === 1 || mixedNum === 2 || mixedNum === 3 || mixedNum === 4 || mixedNum === 5 || mixedNum === 6 || mixedNum === 7 || mixedNum === 8 || mixedNum === 9) {
+ 
+    if (mixedNum % 2 === 0) {
+      console.log("even");
+    } else {
+      console.log("odd");
+    }
+  } else {
+    console.log("not number");
+  }
+}
+
