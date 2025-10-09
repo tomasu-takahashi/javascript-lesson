@@ -1,14 +1,14 @@
 //Q1
 let nickname = 'tom';
 let age = 23;
-console.log(`私のニックネームは${nickname}です。年齢は${age}歳です。`);
+console.log('私のニックネームは'+ nickname + 'です。年齢は' + age + '歳です。');
 
 //Q2
 let languages = [ 'JavaScript', 'PHP', 'Ruby', 'Python', 'Go' ];
 
-let lang0 = languages[0];
-let lang1 = languages[3];
-console.log(`私の好きな言語は${lang0}です。次は${lang1}を勉強してみたいです。`);
+let x = languages[0];
+let y = languages[3];
+console.log('私の好きな言語は'+ x + 'です。次は' + y + 'を勉強してみたいです。');
 
 //Q3
 let user = {
@@ -42,23 +42,24 @@ console.log(playerList[1]?.favorites?.[1]);
 //Q5
 let totalAge = playerList[0].age + playerList[1].age + playerList[2].age;
 let averageAge = totalAge / playerList.length;
-console.log(`3人の平均年齢は${averageAge}歳です。`);
+console.log('3人の平均年齢は' + averageAge + '歳です。');
 
 //Q6
-let sayHello = () => {
+function sayHello() {
   console.log("Hello");
-};
+}
 
 sayHello();
 
-let sayWorld = () => {
+function sayWorld() {
   console.log("World");
-};
+}
 
 sayWorld();
 
+
 //Q7
-user.birthdate = '1997/11/22';
+user.birthdate = '2000-09-27';
 user.sayHello = function() {
   console.log("Hello!");
 };
@@ -66,11 +67,20 @@ user.sayHello();
 
 //Q8
 let calc = {
-  add: (x, y) => console.log(x + y),
-  subtract: (x, y) => console.log(x - y),
-  multiply: (x, y) => console.log(x * y),
-  divide: (x, y) => console.log(x / y),
+  add: function(x, y) {
+    console.log(x + y);
+  },
+  subtract: function(x, y) {
+    console.log(x - y);
+  },
+  multiply: function(x, y) {
+    console.log(x * y);
+  },
+  divide: function(x, y) {
+    console.log(x / y);
+  },
 };
+
 calc.add(3, 4);       
 calc.subtract(20, 10);
 calc.multiply(7, 7);
@@ -86,20 +96,13 @@ let result = rem(num1, num2);
 console.log(`${num1} を ${num2} で割った余りは ${result} です。`);
 
 //Q10
-// スコープ: 変数が使える場所のこと
-// 参照: 変数の中身を見ること
-// function foo() {
-//   let x = 1; // xはこの関数の中だけで使える
-// }
-// console.log(x); // エラー: xは見えない
+// スコープ: x は foo 関数の中だけで有効
+// 参照: 外から x を見ることはできない
 
-// 理由はconsole.log(x);はfoo関数のスコープの中だけにあるので、外から参照できない
-// 正しいコード：
 // function foo() {
 //   let x = 1;
-//   console.log(x); ＝　xはこの関数の中だけで使える
 // }
-// foo();　// 1と表示される
+// console.log(x); // エラー: xは見えない
 
 
 //Q01
@@ -132,9 +135,7 @@ let mixed = [4, '2', 5, '8', '9', 0, 1];
 for (let num = 0; num < mixed.length; num++) {
   let mixedNum = mixed[num];
 
-//   if (typeof mixedNum === "number") {
-  if (mixedNum === 0 || mixedNum === 1 || mixedNum === 2 || mixedNum === 3 || mixedNum === 4 || mixedNum === 5 || mixedNum === 6 || mixedNum === 7 || mixedNum === 8 || mixedNum === 9) {
- 
+  if (typeof mixedNum === "number") {
     if (mixedNum % 2 === 0) {
       console.log("even");
     } else {
