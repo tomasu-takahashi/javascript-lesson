@@ -105,13 +105,10 @@ let result = rem(num1, num2);
 console.log(`${num1} を ${num2} で割った余りは ${result} です。`);
 
 //Q10
-// スコープ: 変数 x は foo 関数の内部でのみ有効であり、関数の外では存在しない
-// 参照: 関数の外から x にアクセスすることはできず、ReferenceError が発生する
+// 変数 x は foo 関数の中でだけスコープのため、 foo 関数内に限定される。
 
-// function foo() {
-//   let x = 1;
-// }
-// console.log(x); // エラー: xは見えない
+// 関数の外から x を参照しようとすると、ReferenceError が発生する。
+
 
 
 //Q01
