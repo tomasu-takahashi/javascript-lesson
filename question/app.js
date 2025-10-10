@@ -8,7 +8,7 @@ let languages = [ 'JavaScript', 'PHP', 'Ruby', 'Python', 'Go' ];
 
 let x = languages[0];
 let y = languages[3];
-console.log('私の好きな言語は'+ x + 'です。次は' + y + 'を勉強してみたいです。');
+console.log(`私の好きな言語は${x}です。次は${y}を勉強してみたいです。`);
 
 //Q3
 let user = {
@@ -26,11 +26,13 @@ let playerList = [
     age: 26,
     favorites: ['Card Game', 'Basket Ball', 'Programming'],
   },
+
   {
     name: 'Bob',
     age: 33,
     favorites: ['Tinder', 'The Legend of Zelda'],
   },
+
   {
     name: 'Michael',
     age: 22,
@@ -54,13 +56,11 @@ console.log(averageAge);
 function sayHello() {
   console.log("Hello");
 }
-
 sayHello();
 
-function sayWorld() {
+let sayWorld = function() {
   console.log("World");
-}
-
+};
 sayWorld();
 
 
@@ -72,25 +72,28 @@ user.sayHello = function() {
 user.sayHello();
 
 //Q8
-let calc = {
-  add: function(x, y) {
-    console.log(x + y);
-  },
-  subtract: function(x, y) {
-    console.log(x - y);
-  },
-  multiply: function(x, y) {
-    console.log(x * y);
-  },
-  divide: function(x, y) {
-    console.log(x / y);
-  },
+let calc = {}; 
+
+calc.add = function(x, y) {
+  console.log(x + y);
 };
 
-calc.add(3, 4);       
+calc.subtract = function(x, y) {
+  console.log(x - y);
+};
+
+calc.multiply = function(x, y) {
+  console.log(x * y);
+};
+
+calc.divide = function(x, y) {
+  console.log(x / y);
+};
+
+calc.add(3, 4);
 calc.subtract(20, 10);
 calc.multiply(7, 7);
-calc.divide(25, 5);
+calc.divide(25, 5); 
 
 //Q9
 function rem(num1, num2) {
@@ -102,8 +105,8 @@ let result = rem(num1, num2);
 console.log(`${num1} を ${num2} で割った余りは ${result} です。`);
 
 //Q10
-// スコープ: x は foo 関数の中だけで有効
-// 参照: 外から x を見ることはできない
+// スコープ: 変数 x は foo 関数の内部でのみ有効であり、関数の外では存在しない
+// 参照: 関数の外から x にアクセスすることはできず、ReferenceError が発生する
 
 // function foo() {
 //   let x = 1;
@@ -121,15 +124,15 @@ setTimeout(() => console.log("Hello World!"), 3000);
 let num = 1;
 
 if (num > 0) {
-  console.log("numは0より大きいです");
+  console.log("num is greater than 0");
 } else if (num < 0) {
-  console.log("numは0より小いです");
+  console.log("num is less than 0");
 } else {
-  console.log("0です");
+  console.log("num is 0");
 }
 
 //Q04
-let = numbers = [];
+let numbers = [];
 for(let num = 1; num < 100; num++) {
   numbers.push(num);
 }
